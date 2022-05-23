@@ -1,0 +1,88 @@
+apiVersion: v1
+data:
+  CONFIG_PATH: "data.json"
+  SERVER_PORT: ":9000"
+  data.json: |-
+    {
+      "/":{
+     "greetings":"welcome"
+     },
+     "/status": {
+         "code": 200,
+         "result": "sukses"
+     },
+     "/api/v1": [
+       {
+         "id": "0001",
+         "type": "donut",
+         "name": "Cake",
+         "ppu": 0.55,
+         "batters":
+           {
+             "batter":
+               [
+                 { "id": "1001", "type": "Regular" },
+                 { "id": "1002", "type": "Chocolate" },
+                 { "id": "1003", "type": "Blueberry" },
+                 { "id": "1004", "type": "Devil's Food" }
+               ]
+           },
+         "topping":
+           [
+             { "id": "5001", "type": "None" },
+             { "id": "5002", "type": "Glazed" },
+             { "id": "5005", "type": "Sugar" },
+             { "id": "5007", "type": "Powdered Sugar" },
+             { "id": "5006", "type": "Chocolate with Sprinkles" },
+             { "id": "5003", "type": "Chocolate" },
+             { "id": "5004", "type": "Maple" }
+           ]
+       }
+     ],
+     "/api/v2": [
+       {
+         "squadName": "Super hero squad",
+         "homeTown": "Metro City",
+         "formed": 2016,
+         "secretBase": "Super tower",
+         "active": true,
+         "members": [
+           {
+             "name": "Molecule Man",
+             "age": 29,
+             "secretIdentity": "Dan Jukes",
+             "powers": [
+               "Radiation resistance",
+               "Turning tiny",
+               "Radiation blast"
+             ]
+           },
+           {
+             "name": "Madame Uppercut",
+             "age": 39,
+             "secretIdentity": "Jane Wilson",
+             "powers": [
+               "Million tonne punch",
+               "Damage resistance",
+               "Superhuman reflexes"
+             ]
+           },
+           {
+             "name": "Eternal Flame",
+             "age": 1000000,
+             "secretIdentity": "Unknown",
+             "powers": [
+               "Immortality",
+               "Heat Immunity",
+               "Inferno",
+               "Teleportation",
+               "Interdimensional travel"
+             ]
+           }
+         ]
+       }
+     ]
+    }
+kind: ConfigMap
+metadata:
+  name: dummy-cfg
